@@ -1,8 +1,6 @@
 // Footer night sky: a nebula stitched across the whole footer like the top-of-page ASCII art —
 // star-dust bands with thin streaks, a twinkling star field, cross-stitch stars and x sparkles,
-// shooting stars with stitched tails, and star dust that trails the pointer. Brightness picks the
-// glyph (faint dot → + → cross-stitch x → bold x). It quiets down behind the footer text so that
-// stays readable. ~30fps, only while the footer is on screen; reduced motion gets one still frame.
+// shooting stars with stitched tails, and star dust that trails the pointer.
 (function () {
   'use strict';
   var canvas = document.querySelector('.footer__sky');

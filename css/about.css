@@ -1,8 +1,3 @@
-/* ==========================================================================
-   About page — built from Figma "Draft v3 / home (light|dark)" (129:1711 / 129:1982).
-   Shares tokens, sidebar, footer and backgrounds with styles.css.
-   ========================================================================== */
-
 .main--about { gap: 120px; padding: 100px 40px; } /* one gap sets the space between every section */
 
 /* Section headings share .section-title's style (styles.css) */
@@ -24,8 +19,7 @@
   background: #f4f4f3;
   box-shadow: 0 6px 7px rgba(0,0,0,.03), 0 25px 12.5px rgba(0,0,0,.03), 0 57px 17px rgba(0,0,0,.02);
 }
-/* Dark mode: Figma frame 129:2173 — 4px backdrop blur, radius 9, and a color-dodge layer of
-   a dark dot grid (80%) with a soft-light paper texture (25%) on top. */
+/* Dark mode */
 :root[data-theme="dark"] .collage { background: none; box-shadow: none; border-radius: 9px; }
 :root[data-theme="dark"] .collage__board::before { display: none; }
 .collage__surface { display: none; }
@@ -59,7 +53,6 @@
 .t-icon--23 { --glow: #202241; }
 .t-sheet-folder > .c-rot { border-radius: calc(2 * var(--u)) calc(2 * var(--u)) calc(6 * var(--u)) calc(6 * var(--u)); }
 
-/* generated from Figma geometry */
 .c-18 { left: calc(228 * var(--u)); top: calc(66 * var(--u)); width: calc(133.722 * var(--u)); height: calc(100 * var(--u)); }
 .c-18 > .c-rot { width: calc(128.197 * var(--u)); height: calc(95.5 * var(--u)); transform: rotate(-2.37deg); }
 .c-18 > .c-rot img { width: 100%; height: 100%; left: 0; top: 0; object-fit: contain; }
@@ -118,7 +111,7 @@
 .t-sheet-folder > .c-rot { width: calc(146.921 * var(--u)); height: calc(71.828 * var(--u)); transform: rotate(3.28deg); }
 .t-sheet-folder > .c-rot img { width: 405.1%; height: 455.74%; left: -28.28%; top: -85.25%; }
 
-/* Folder hover — Figma smart-animate: 300ms ease-out to the "Hover" variant */
+/* Folder hover - design toolkit */
 .tools { cursor: pointer; outline-offset: 6px; border-radius: 8px; transition: filter .3s ease-out; }
 .tools .c-item, .tools .c-rot { transition: left .3s ease-out, top .3s ease-out, width .3s ease-out, height .3s ease-out, transform .3s ease-out; }
 .tools .c-item { z-index: 2; }
@@ -144,7 +137,7 @@
 .tools:is(:hover, :focus) .t-22 { left: calc(102.97 * var(--u)); top: calc(-61 * var(--u)); width: calc(49.398 * var(--u)); height: calc(49.247 * var(--u)); }
 .tools:is(:hover, :focus) .t-22 > .c-rot { width: calc(40.141 * var(--u)); height: calc(39.924 * var(--u)); transform: rotate(-15.6deg); }
 
-/* ---------- collage: Figma-style select + drag (js/collage-drag.js) ---------- */
+/* ---------- collage photo collection ---------- */
 .is-draggable {
   translate: calc(var(--dx, 0) * var(--u)) calc(var(--dy, 0) * var(--u));
   cursor: grab; touch-action: none; user-select: none; -webkit-user-select: none;
@@ -165,7 +158,7 @@
 .sel-box__handle--bl { left: -5px; bottom: -5px; }
 .sel-box__handle--br { right: -5px; bottom: -5px; }
 
-/* Matcha set (Figma group "Frame 25842") — positions of its three images relative to the group */
+/* Matcha set — positions of its three images relative to the group */
 .c-matcha { position: absolute; left: calc(765 * var(--u)); top: calc(122 * var(--u)); width: calc(161.125 * var(--u)); height: calc(149.5 * var(--u)); }
 .c-matcha > .c-32 { left: calc(52 * var(--u)); top: 0; }
 .c-matcha > .c-33 { left: calc(-12 * var(--u)); top: calc(26 * var(--u)); }
@@ -177,7 +170,7 @@
 .is-draggable:not(.tools):hover, .is-draggable.is-dragging:not(.tools) { filter: var(--lift-shadow); }
 .is-draggable:not(.tools):hover, .is-draggable.is-dragging:not(.tools) { rotate: 3deg; }
 
-/* Hover labels — Figma-style name tag in the selection blue */
+/* Hover label captions */
 .is-draggable[data-label]::after {
   content: attr(data-label);
   position: absolute; left: 50%; bottom: calc(100% + 8px); z-index: 11;
@@ -188,7 +181,7 @@
 }
 .is-draggable[data-label-pos="below"]::after { bottom: auto; top: calc(100% + 8px); translate: -50% -4px; }
 .is-draggable[data-label]:hover::after { opacity: 1; translate: -50% 0; }
-/* Lift the hovered/dragged item (and its label) above every other item so nothing covers the tag.
+/* Lift the hovered/dragged item (and its label) above every other item
    !important beats the inline z-index the drag script uses for "bring to front". */
 .is-draggable:hover, .is-draggable.is-dragging { z-index: 1000 !important; }
 .is-draggable.is-dragging[data-label]::after { opacity: 0; }       /* stay out of the way while moving */
@@ -212,8 +205,7 @@
 :root[data-theme="dark"] .collage__reset:hover { background: rgba(17, 24, 39, .85); }
 .collage__board.is-resetting .is-draggable { transition: translate .45s cubic-bezier(.2, .8, .2, 1), rotate .25s ease-out; }
 
-/* Narrow collages (phones / small tablets): portrait arrangement on a 420-wide board,
-   so objects stay ~80% of desktop size instead of shrinking to a third. */
+/* collages */
 @container (max-width: 640px) {
   .collage__board { --W: 420; aspect-ratio: 420 / 650; }
   .c-34      { left: calc(24 * var(--u));  top: calc(40 * var(--u)); }
