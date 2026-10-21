@@ -1,7 +1,5 @@
 
-window.SITE_CONFIG = {
-  // Email is split so it never appears whole in the page source (deters scrapers).
-  emailUser: 'zeajzamoranos',
+window.SITE_CONFIG = {  emailUser: 'zeajzamoranos',
   emailDomain: 'gmail.com',
 
   links: {

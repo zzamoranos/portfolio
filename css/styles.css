@@ -291,6 +291,9 @@ a[aria-disabled="true"] { cursor: default; }  /* links whose URL isn't set yet i
 }
 .cover__screen img { position: absolute; left: -.13%; top: -12.89%; width: 100.26%; height: 113.08%; max-width: none; }
 .cover__phone { left: 50%; top: 7.1%; height: 87.1%; width: auto; translate: -50% 0; border-radius: 12px; }
+/* Photo covers: no glow or inner haze over the artwork, so the covers read clearly */
+.cover--docufy .card__glow, .cover--flento .card__glow { display: none; }
+.cover--docufy::after, .cover--flento::after { box-shadow: none; }
 .cover--technoring {
   background: radial-gradient(ellipse 150% 95% at 50% 5%, #ddeeff 0%, #d8f2ff 41%, #f5fbff 77%);
 }
@@ -314,7 +317,6 @@ a[aria-disabled="true"] { cursor: default; }  /* links whose URL isn't set yet i
 .card__cta svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .card:hover .card__cta, .card:focus-visible .card__cta { opacity: 1; scale: 1; }
 @media (hover: none) { .card:hover .card__cta { opacity: 0; } }
-.card:hover .card__title { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
 
 /* ---------- footer ---------- */
 .footer { position: relative; z-index: 1; overflow: hidden; background: var(--footer-bg); padding: 104px 0; margin-top: 0; }
