@@ -525,14 +525,9 @@
 
 /* Final design showcase */
 .cs-showcase { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 16px; padding: 28px 24px 36px; border-radius: var(--radius-card); background: #f2f3fa; }
-.cs-showcase figcaption { display: flex; flex-direction: column; align-items: center; gap: 8px; }
-.cs-showcase__tag { padding: 4px 12px; border-radius: 16px; background: #fefefe; box-shadow: inset 0 0 0 1px #e0e3ed; font-size: 12px; line-height: 16px; color: #555a6f; }
-.cs-showcase__title { font-family: var(--font-display); font-size: 18px; line-height: 24px; color: #536dff; }
 .cs-showcase__screens { display: flex; justify-content: center; gap: 48px; }
 .cs-showcase__screens img { width: 240px; max-width: 42%; height: auto; border-radius: var(--radius-card); }
 :root[data-theme="dark"] .cs-showcase { background: rgba(226, 234, 255, .06); }
-:root[data-theme="dark"] .cs-showcase__title { color: #a8b5fd; }
-
 /* Under construction */
 .cs-wip { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 48px 24px; border-radius: var(--radius-card); text-align: center; box-shadow: inset 0 0 0 1px rgba(115, 122, 146, .25); }
 .cs-wip__title { margin: 0; font-family: var(--font-display); font-weight: 400; font-size: 22px; line-height: 30px; color: var(--text-heading); }
@@ -566,3 +561,18 @@
    each section stops a little below the top, and below the sticky top bar on phones. */
 .case__section, .cs-section { scroll-margin-top: 32px; }
 @media (max-width: 809.98px) { .case__section, .cs-section { scroll-margin-top: 88px; } }
+
+/* Flento updates: pill labels, three-phone overview, onboarding pair */
+.cs-pill {
+  align-self: center; margin: 0; padding: 6px 12px; border: 1px solid #e0e3ed; border-radius: 24px; background: #fefefe;
+  font-size: 14px !important; line-height: 20px !important; letter-spacing: 0 !important; color: #555a6f !important;
+}
+:root[data-theme="dark"] .cs-pill { border-color: rgba(226, 234, 255, .15); background: rgba(226, 234, 255, .06); color: var(--text-muted) !important; }
+.cs-trio {
+  margin: 24px 0 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; align-items: start;
+  filter: drop-shadow(1px 6px 6.5px rgba(0, 0, 0, .06)) drop-shadow(4px 23px 11.5px rgba(0, 0, 0, .05)) drop-shadow(9px 51px 15.5px rgba(0, 0, 0, .03));
+}
+.cs-trio img { width: 100%; height: auto; margin-top: 48px; border-radius: 18px; }
+.cs-trio .cs-trio__mid { margin-top: 0; }
+.cs-showcase__pair { width: 100%; max-width: 557px; height: auto; border-radius: var(--radius-card); }
+@media (max-width: 809.98px) { .cs-trio { gap: 10px; } .cs-trio img { margin-top: 24px; border-radius: 10px; } }

@@ -3,3 +3,6 @@
 .vercel/
 node_modules/
 .vercel
+
+# Untouched photo originals (contain location/camera metadata); never publish
+_archive/originals/
